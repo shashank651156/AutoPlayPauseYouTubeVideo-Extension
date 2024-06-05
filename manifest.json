@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Pause/Play Video",
+  "version": "1.0",
+  "description": "Pauses the video when you leave the window and plays it when you return.",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
